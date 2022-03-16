@@ -82,6 +82,8 @@ six = pygame.image.load('nombres/six.png')
 sept = pygame.image.load('nombres/sept.png')
 huit = pygame.image.load('nombres/huit.png')
 neuf = pygame.image.load('nombres/neuf.png')
+annuler = pygame.image.load('nombres/annuler.png')
+valider = pygame.image.load('nombres/coche.png')
 
 #Messagerie
 boitemessagerie = pygame.image.load('messagerie/boitemessagerie.png')

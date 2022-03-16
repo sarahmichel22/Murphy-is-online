@@ -67,6 +67,8 @@ bouton_sept = Bouton(500,400,sept)
 bouton_huit = Bouton(560,400,huit)
 bouton_neuf = Bouton(620,400,neuf)
 bouton_zero = Bouton(560,460,zero)
+bouton_annuler = Bouton(750,180,annuler)
+bouton_valider = Bouton(800,180,valider)
 
 #Messagerie
 bouton_retour = Bouton(860,64,retour)

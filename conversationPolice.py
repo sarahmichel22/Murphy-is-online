@@ -28,11 +28,11 @@ PMurphy3_2 = police.render("Il fait une vingtaine de kilos et est blond aux yeux
 Police4_1 = police.render("Nous vous tiendrons au courant de la progression de notre enquête,",1,(100,100,100))
 Police4_2 = police.render("Nous envisageons toutes les pistes et nous commençons",1,(100,100,100))
 Police4_3 = police.render("par interroger les gens présents à cette fête.",1,(100,100,100))
-Police4_4 = police.render("Nous cherchons aussi à savoir si l’un d’entre eux est mêlé à cette histoire.",1,(100,100,100))
+Police4_4 = police.render("Nous cherchons aussi à savoir si une personne de votre entourage est lié à l'affaire.",1,(100,100,100))
 Police4_5 = police.render("Bon courage Monsieur Brown.",1,(100,100,100))
 
-PMurphy5_1 = police.render("Je suis certain que vous pouvez oublier cette piste, personne n'aurait pu",1,(100,100,100))
-PMurphy5_2 = police.render("enlever notre enfant, il n'y avait que des amis proches de nous et de mon fils.",1,(100,100,100))
+PMurphy5_1 = police.render("Je suis certain que vous pouvez oublier cette piste, personne de nos connaissances ",1,(100,100,100))
+PMurphy5_2 = police.render("n'aurait pu enlever notre enfant.",1,(100,100,100))
 
 Police6_1 = police.render("Nous ne voulons écarter aucune piste.",1,(100,100,100))
 Police6_2 = police.render("Le kidnappeur n'a laissé aucune trace, nous pouvons imaginer qu'il s'agit",1,(100,100,100))

@@ -6,9 +6,10 @@ from classes import *
 from textes import *
 from sons import *
 from messagerie import *
-from ConversationPM import *
+from conversationPolice import *
+from conversationVictoria import *
+from notes import *
 
-#Pendant que le logiciel tourne
 running = True
 is_playing = False
 navigateur = False
@@ -29,6 +30,13 @@ chiffre2 = 10
 chiffre3 = 10
 chiffre4 = 10
 derniermessagePolice = len(conversationPolice)-1
+derniermessageVictoria = len(conversationVictoria)-1
+
+
+#Pendant que le logiciel tourne
+
+
+from notes import *
 
 while running:
 
@@ -167,15 +175,30 @@ while running:
             if Susan == True:
                 screen.blit(nomSusan, (250,220))
                 screen.blit(photoSusan, (250,115))
-                #affichermessages(conversationSusan)
             if Noah == True:
                 screen.blit(nomNoah, (250,220))
                 screen.blit(photoNoah, (250,115))
-                #affichermessages(conversationNoah)
+                screen.blit(conversationNoah[derniermessageNoah-4],(380,140))
+                screen.blit(conversationNoah[derniermessageNoah-3],(380,170))
+                screen.blit(conversationNoah[derniermessageNoah-2],(380,200))
+                screen.blit(conversationNoah[derniermessageNoah-1],(380,230))
+                screen.blit(conversationNoah[derniermessageNoah],(380,260))
+                if bouton_flechehaut.draw() == True and not derniermessageNoah<5:
+                    derniermessageNoah-=1
+                if bouton_flechebas.draw() == True and derniermessageNoah!=(len(conversationVictoria)-1):
+                    derniermessageNoah+=1
             if Victoria == True:
                 screen.blit(nomVictoria, (250,220))
                 screen.blit(photoVictoria, (250,115))
-                #affichermessages(conversationVictoria)
+                screen.blit(conversationVictoria[derniermessageVictoria-4],(380,140))
+                screen.blit(conversationVictoria[derniermessageVictoria-3],(380,170))
+                screen.blit(conversationVictoria[derniermessageVictoria-2],(380,200))
+                screen.blit(conversationVictoria[derniermessageVictoria-1],(380,230))
+                screen.blit(conversationVictoria[derniermessageVictoria],(380,260))
+                if bouton_flechehaut.draw() == True and not derniermessageVictoria<5:
+                    derniermessageVictoria-=1
+                if bouton_flechebas.draw() == True and derniermessageVictoria!=(len(conversationVictoria)-1):
+                    derniermessageVictoria+=1
             if Taylor == True:
                 screen.blit(nomTaylor, (250,220))
                 screen.blit(photoTaylor, (250,115))
@@ -218,6 +241,121 @@ while running:
             screen.blit(traitnombre, (515,190))
             screen.blit(traitnombre, (595,190))
             screen.blit(traitnombre, (675,190))
+
+            if bouton_zero.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 0
+                elif chiffre2 > 9:
+                    chiffre2 = 0
+                elif chiffre3 > 9:
+                    chiffre3 = 0
+                elif chiffre4 > 9:
+                    chiffre4 = 0
+
+            if bouton_un.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 1
+                elif chiffre2 > 9:
+                    chiffre2 = 1
+                elif chiffre3 > 9:
+                    chiffre3 = 1
+                elif chiffre4 > 9:
+                    chiffre4 = 1
+
+            if bouton_deux.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 2
+                elif chiffre2 > 9:
+                    chiffre2 = 2
+                elif chiffre3 > 9:
+                    chiffre3 = 2
+                elif chiffre4 > 9:
+                    chiffre4 = 2
+
+            if bouton_trois.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 3
+                elif chiffre2 > 9:
+                    chiffre2 = 3
+                elif chiffre3 > 9:
+                    chiffre3 = 3
+                elif chiffre4 > 9:
+                    chiffre4 = 3
+
+            if bouton_quatre.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 4
+                elif chiffre2 > 9:
+                    chiffre2 = 4
+                elif chiffre3 > 9:
+                    chiffre3 = 4
+                elif chiffre4 > 9:
+                    chiffre4 = 4
+
+            if bouton_cinq.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 5
+                elif chiffre2 > 9:
+                    chiffre2 = 5
+                elif chiffre3 > 9:
+                    chiffre3 = 5
+                elif chiffre4 > 9:
+                    chiffre4 = 5
+
+            if bouton_six.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 6
+                elif chiffre2 > 9:
+                    chiffre2 = 6
+                elif chiffre3 > 9:
+                    chiffre3 = 6
+                elif chiffre4 > 9:
+                    chiffre4 = 6
+
+            if bouton_sept.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 7
+                elif chiffre2 > 9:
+                    chiffre2 = 7
+                elif chiffre3 > 9:
+                    chiffre3 = 7
+                elif chiffre4 > 9:
+                    chiffre4 = 7
+
+            if bouton_huit.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 8
+                elif chiffre2 > 9:
+                    chiffre2 = 8
+                elif chiffre3 > 9:
+                    chiffre3 = 8
+                elif chiffre4 > 9:
+                    chiffre4 = 8
+
+            if bouton_neuf.draw() == True:
+                if chiffre1 > 9:
+                    chiffre1 = 9
+                elif chiffre2 > 9:
+                    chiffre2 = 9
+                elif chiffre3 > 9:
+                    chiffre3 = 9
+                elif chiffre4 > 9:
+                    chiffre4 = 9
+
+            if bouton_annuler.draw() == True:
+                if chiffre4<10:
+                    chiffre4=10
+                elif chiffre3<10:
+                    chiffre3=10
+                elif chiffre2<10:
+                    chiffre2=10 
+                elif chiffre1<10:
+                    chiffre1=10
+            if bouton_valider.draw()== True:
+                if validermdp(chiffre1,chiffre2,chiffre3,chiffre4)==True:
+                    notes_debloquees = True
+            afficherChiffres(chiffre1,chiffre2,chiffre3,chiffre4,screen)
+            
             
         if bouton_croix.draw() == True :
             notes = False

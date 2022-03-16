@@ -5,16 +5,9 @@ from telechargement_images import *
 from classes import *
 from textes import *
 from sons import *
-from ConversationPM import *
+from conversationPolice import *
 
 avancementhistoire = 0
-niveaujeu = 0
-affectionSusan = 70
-affectionNoah = 80
-affectionVictoria = 40
-affectionTaylor = 30
-confiancePolice = 50
-confianceDrDavies = 50
 
 notificationSusan = False
 notificationNoah = False
@@ -22,14 +15,7 @@ notificationVictoria = False
 notificationTaylor = False
 notificationPolice = False
 notificationDrDavies = False
-
-Susan = False
-Noah = False
-Victoria = False
-Taylor = False
-Police = False
-DrDavies = False
-
+derniermessageMurphyNoah = 0
 
 def photodeprofil():
 
@@ -41,19 +27,6 @@ def photodeprofil():
 
 	if DrDavies == True:
 		screen.blit(pdpDrDavies, (250,337))
-
-
-'''def affichermessages(l):
-	screen.blit(l[x-4],(380,140))
-	screen.blit(l[x-3],(380,170))
-	screen.blit(l[x-2],(380,200))
-	screen.blit(l[x-1],(380,230))
-	screen.blit(l[x],(380,260))
-	if bouton_flechehaut.draw() == True and not x==0:
-		derniermessage-=1
-	if bouton_flechebas.draw() == True and not x==(len(l)-1):
-		derniermessage+=1'''
-
 
 def nomcontacts():
 	if Susan == True:
@@ -72,8 +45,18 @@ def nomcontacts():
 	screen.blit(nomMurphy, (250,452))
 
 
+def ajoutemessageAutre(xmessages,xconversation,xnom):
+    pygame.time.delay(10000)
+    xconversation.append(xnom)
+    for i in xmessages:
+    	xconversation.append(i)
+    sonnotification.play()
+    return xconversation
 
-	'''
+if avancementhistoire = 0:
+	ajoutemessageAutre(messageNoah1,conversationNoah,nomNoah)
+	avancementhistoire+=1
+elif avancementhistoire = 2:
+	if derniermessageMurphyNoah = 1
+		ajoutemessageAutre(messageNoah1)
 
-def messageriedef():
-'''
