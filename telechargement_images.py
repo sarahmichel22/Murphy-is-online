@@ -18,6 +18,9 @@ curseur = pygame.image.load('curseur.png')
 #Ecran d'acceuil
 menu = pygame.image.load('menu.png')
 
+notification = pygame.image.load('notification.png')
+notificationcontact = pygame.image.load('messagerie/notification.png')
+
 #Bouttons de l'écran d'acceuil
 continuer = pygame.image.load('boutons/continuer.png')
 nouvellepartie = pygame.image.load('boutons/nouvellepartie.png')
@@ -87,8 +90,11 @@ valider = pygame.image.load('nombres/coche.png')
 
 #Messagerie
 boitemessagerie = pygame.image.load('messagerie/boitemessagerie.png')
+boitemessageriereponse = pygame.image.load('messagerie/boitemessageriereponse.png')
 flechehaut = pygame.image.load('flechehaut.png')
 flechebas = pygame.image.load('flechebas.png')
+boutonhorsligne = pygame.image.load('messagerie/horsligne.png')
+boutonenligne = pygame.image.load('messagerie/enligne.png')
 
 #photo de profils
 pdpbase = pygame.image.load('pdp/pdpbase.png')

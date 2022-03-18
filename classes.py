@@ -82,3 +82,7 @@ bouton_Noah = Bouton(745,150,photoNoah)
 bouton_Taylor = Bouton(345,350,photoTaylor)
 bouton_Police = Bouton(545,350,photoPolice)
 bouton_DrDavies = Bouton(745,350,photoDrDavies)
+
+bouton_choix1 = Bouton(380,370,choix1)
+bouton_choix2 = Bouton(380,410,choix2)
+bouton_choix3 = Bouton(380,450,choix3)

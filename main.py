@@ -8,6 +8,8 @@ from sons import *
 from messagerie import *
 from conversationPolice import *
 from conversationVictoria import *
+from conversationNoah import *
+from conversationDrDavies import *
 from notes import *
 
 running = True
@@ -29,8 +31,17 @@ chiffre1 = 10
 chiffre2 = 10
 chiffre3 = 10
 chiffre4 = 10
+derniermessageNoah = len(conversationNoah)-1
 derniermessagePolice = len(conversationPolice)-1
 derniermessageVictoria = len(conversationVictoria)-1
+derniermessageDrDavies = len(conversationDrDavies)-1
+premierenote = 0
+Susan = False
+Noah = False
+Victoria = False
+DrDavies = False
+Taylor = False
+Police = False
 
 
 #Pendant que le logiciel tourne
@@ -68,6 +79,13 @@ while running:
     screen.blit(background, (0,0))
 
     sonmenu.stop()
+
+#################################################################################################################################
+#################################################   HISTOIRE   ##################################################################
+#################################################################################################################################
+
+
+
 
 #################################################################################################################################
     
@@ -138,27 +156,57 @@ while running:
             if bouton_Susan.draw() == True:
                 Susan = True
                 contacts = False
-            screen.blit(nomSusan,(375,260))
+                notificationSusan = False
+            screen.blit(nomSusan,(365,260))
+            if avancementhistoire < 8:
+                screen.blit(boutonhorsligne,(410,259))
+            else :
+                screen.blit(boutonenligne,(410,259))
             if bouton_Noah.draw() == True:
                 Noah = True
                 contacts = False
-            screen.blit(nomNoah,(780,260))
+                notificationNoah = False
+            screen.blit(nomNoah,(770,260))
+            if avancementhistoire < 8:
+                screen.blit(boutonenligne,(808,259))
+            else :
+                screen.blit(boutonhorsligne,(808,259))
             if bouton_Victoria.draw() == True:
                 Victoria = True
                 contacts = False
-            screen.blit(nomVictoria,(570,260))
+                notificationVictoria = False
+            screen.blit(nomVictoria,(560,260))
+            screen.blit(boutonhorsligne,(615,259))
             if bouton_Police.draw() == True:
                 Police = True
                 contacts = False
-            screen.blit(nomPolice,(575,460))
+                notificationPolice = False
+            screen.blit(nomPolice,(565,460))
+            if notes_debloquees ==True:
+                screen.blit(boutonenligne,(610,459))
+            else :
+                screen.blit(boutonhorsligne,(610,459))
             if bouton_DrDavies.draw() == True:
                 DrDavies = True
                 contacts = False
-            screen.blit(nomDrDavies,(765,460))
+                notificationDrDavies = False
+            screen.blit(nomDrDavies,(755,460))
+            if avancementhistoire < 8:
+                screen.blit(boutonhorsligne,(820,459))
+            else :
+                screen.blit(boutonenligne,(820,459))
+
             if bouton_Taylor.draw() == True:
                 Taylor = True
                 contacts = False
-            screen.blit(nomTaylor,(375,460))
+                notificationTaylor = False
+            screen.blit(nomTaylor,(365,460))
+            if avancementhistoire < 8:
+                screen.blit(boutonhorsligne,(410,459))
+            else :
+                screen.blit(boutonenligne,(410,459))
+
+            notificationContact(screen,notificationcontact,notificationSusan,notificationNoah,notificationPolice,notificationVictoria,notificationTaylor,notificationDrDavies)
             
         else :
             screen.blit(boitemessagerie,(255,110))
@@ -175,43 +223,69 @@ while running:
             if Susan == True:
                 screen.blit(nomSusan, (250,220))
                 screen.blit(photoSusan, (250,115))
+                screen.blit(horsligneSusan,(380,355))
+                screen.blit(horsligne,(380,385))
+                screen.blit(boutonhorsligne,(295,219))
             if Noah == True:
                 screen.blit(nomNoah, (250,220))
                 screen.blit(photoNoah, (250,115))
-                screen.blit(conversationNoah[derniermessageNoah-4],(380,140))
-                screen.blit(conversationNoah[derniermessageNoah-3],(380,170))
-                screen.blit(conversationNoah[derniermessageNoah-2],(380,200))
-                screen.blit(conversationNoah[derniermessageNoah-1],(380,230))
-                screen.blit(conversationNoah[derniermessageNoah],(380,260))
-                if bouton_flechehaut.draw() == True and not derniermessageNoah<5:
+                screen.blit(horsligneNoah,(380,355))
+                screen.blit(horsligne,(380,385))
+                if avancementhistoire < 9:
+                    screen.blit(boitemessageriereponse,(255,344))
+                    screen.blit(boutonenligne,(287,219))
+                else:
+                    screen.blit(boutonhorsligne,(287,219))
+                screen.blit(conversationNoah[derniermessageNoah-6],(380,132))
+                screen.blit(conversationNoah[derniermessageNoah-5],(380,162))
+                screen.blit(conversationNoah[derniermessageNoah-4],(380,192))
+                screen.blit(conversationNoah[derniermessageNoah-3],(380,222))
+                screen.blit(conversationNoah[derniermessageNoah-2],(380,252))
+                screen.blit(conversationNoah[derniermessageNoah-1],(380,282))
+                screen.blit(conversationNoah[derniermessageNoah],(380,312))
+                if bouton_flechehaut.draw() == True and not derniermessageNoah<7:
                     derniermessageNoah-=1
-                if bouton_flechebas.draw() == True and derniermessageNoah!=(len(conversationVictoria)-1):
+                if bouton_flechebas.draw() == True and derniermessageNoah!=(len(conversationNoah)-1):
                     derniermessageNoah+=1
+
             if Victoria == True:
                 screen.blit(nomVictoria, (250,220))
                 screen.blit(photoVictoria, (250,115))
-                screen.blit(conversationVictoria[derniermessageVictoria-4],(380,140))
-                screen.blit(conversationVictoria[derniermessageVictoria-3],(380,170))
-                screen.blit(conversationVictoria[derniermessageVictoria-2],(380,200))
-                screen.blit(conversationVictoria[derniermessageVictoria-1],(380,230))
-                screen.blit(conversationVictoria[derniermessageVictoria],(380,260))
-                if bouton_flechehaut.draw() == True and not derniermessageVictoria<5:
+                screen.blit(horsligneVictoria,(380,355))
+                screen.blit(horsligne,(380,385))
+                screen.blit(boutonhorsligne,(305,219))
+                screen.blit(conversationVictoria[derniermessageVictoria-6],(380,132))
+                screen.blit(conversationVictoria[derniermessageVictoria-5],(380,162))
+                screen.blit(conversationVictoria[derniermessageVictoria-4],(380,192))
+                screen.blit(conversationVictoria[derniermessageVictoria-3],(380,222))
+                screen.blit(conversationVictoria[derniermessageVictoria-2],(380,252))
+                screen.blit(conversationVictoria[derniermessageVictoria-1],(380,282))
+                screen.blit(conversationVictoria[derniermessageVictoria],(380,312))
+                if bouton_flechehaut.draw() == True and not derniermessageVictoria<7:
                     derniermessageVictoria-=1
                 if bouton_flechebas.draw() == True and derniermessageVictoria!=(len(conversationVictoria)-1):
                     derniermessageVictoria+=1
             if Taylor == True:
                 screen.blit(nomTaylor, (250,220))
                 screen.blit(photoTaylor, (250,115))
+                screen.blit(horsligneTaylor,(380,355))
+                screen.blit(horsligne,(380,385))
+                screen.blit(boutonhorsligne,(298,219))
                 #affichermessages(conversationTaylor)
             if Police == True:
                 screen.blit(nomPolice, (250,220))
                 screen.blit(photoPolice, (250,115))
-                screen.blit(conversationPolice[derniermessagePolice-4],(380,140))
-                screen.blit(conversationPolice[derniermessagePolice-3],(380,170))
-                screen.blit(conversationPolice[derniermessagePolice-2],(380,200))
-                screen.blit(conversationPolice[derniermessagePolice-1],(380,230))
-                screen.blit(conversationPolice[derniermessagePolice],(380,260))
-                if bouton_flechehaut.draw() == True and not derniermessagePolice<5:
+                screen.blit(horslignePolice,(380,355))
+                screen.blit(horsligne,(380,385))
+                screen.blit(boutonhorsligne,(296,219))
+                screen.blit(conversationPolice[derniermessagePolice-6],(380,132))
+                screen.blit(conversationPolice[derniermessagePolice-5],(380,162))
+                screen.blit(conversationPolice[derniermessagePolice-4],(380,192))
+                screen.blit(conversationPolice[derniermessagePolice-3],(380,222))
+                screen.blit(conversationPolice[derniermessagePolice-2],(380,252))
+                screen.blit(conversationPolice[derniermessagePolice-1],(380,282))
+                screen.blit(conversationPolice[derniermessagePolice],(380,312))
+                if bouton_flechehaut.draw() == True and not derniermessagePolice<7:
                     derniermessagePolice-=1
                 if bouton_flechebas.draw() == True and derniermessagePolice!=(len(conversationPolice)-1):
                     derniermessagePolice+=1
@@ -219,8 +293,22 @@ while running:
             if DrDavies == True:
                 screen.blit(nomDrDavies, (250,220))
                 screen.blit(photoDrDavies, (250,115))
-                #affichermessages(conversationDrDavies)
+                screen.blit(horsligneDrDavies,(380,355))
+                screen.blit(horsligne,(380,385))
+                screen.blit(boutonhorsligne,(314,219))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-6],(380,132))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-5],(380,162))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-4],(380,192))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-3],(380,222))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-2],(380,252))
+                screen.blit(conversationDrDavies[derniermessageDrDavies-1],(380,282))
+                screen.blit(conversationDrDavies[derniermessageDrDavies],(380,312))
+                if bouton_flechehaut.draw() == True and not derniermessageDrDavies<7:
+                    derniermessageDrDavies-=1
+                if bouton_flechebas.draw() == True and derniermessageDrDavies!=(len(conversationDrDavies)-1):
+                    derniermessageDrDavies+=1
             screen.blit(photoMurphy, (250,337))
+            screen.blit(nomMurphy, (250,452))
 
         if bouton_croix.draw() == True :
             messagerie = False
@@ -241,6 +329,7 @@ while running:
             screen.blit(traitnombre, (515,190))
             screen.blit(traitnombre, (595,190))
             screen.blit(traitnombre, (675,190))
+
 
             if bouton_zero.draw() == True:
                 if chiffre1 > 9:
@@ -356,6 +445,24 @@ while running:
                     notes_debloquees = True
             afficherChiffres(chiffre1,chiffre2,chiffre3,chiffre4,screen)
             
+        elif notes_debloquees == True:
+            
+            screen.blit(notesliste[premierenote],(300,140))
+            screen.blit(notesliste[premierenote+1],(300,170))
+            screen.blit(notesliste[premierenote+2],(300,200))
+            screen.blit(notesliste[premierenote+3],(300,230))
+            screen.blit(notesliste[premierenote+4],(300,260))
+            screen.blit(notesliste[premierenote+5],(300,290))
+            screen.blit(notesliste[premierenote+6],(300,320))
+            screen.blit(notesliste[premierenote+7],(300,350))
+            screen.blit(notesliste[premierenote+8],(300,380))
+            screen.blit(notesliste[premierenote+9],(300,410))
+            screen.blit(notesliste[premierenote+10],(300,440))
+            screen.blit(notesliste[premierenote+11],(300,470))
+            if bouton_flechehaut.draw() == True and not premierenote==0:
+                premierenote-=1
+            if bouton_flechebas.draw() == True and not premierenote==len(notesliste)-12:
+                premierenote+=1
             
         if bouton_croix.draw() == True :
             notes = False
@@ -405,6 +512,7 @@ while running:
 
         sonmenu.set_volume(musique)
         sonclic.set_volume(son)
+        sonnotification.set_volume(son)
         
         if musique == 1:
             screen.blit(volumehaut,(600,133))
@@ -431,6 +539,153 @@ while running:
         screen.blit(traitbas,(298,355))
         if bouton_croix.draw() == True :
             parametres = False
+
+    if notificationNoah==True or notificationVictoria==True or notificationSusan==True or notificationTaylor==True or notificationPolice==True or notificationDrDavies==True:
+        screen.blit(notification,(350,533))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if avancementhistoire == 0:
+        ajoutemessageAutre(messageNoah1,conversationNoah,nomMessagerieNoah)
+        avancementhistoire+=1
+        notificationNoah = True
+        derniermessageNoah = len(conversationNoah)-1
+
+    elif avancementhistoire == 1 and messagerie==True and Noah==True:
+        affichereponses(messageNMurphy2,screen)
+        if bouton_choix1.draw()== True:
+            ajoutemessageMurphy(messageNMurphy2[0],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah3[0],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+        if bouton_choix2.draw()== True:
+            ajoutemessageMurphy(messageNMurphy2[1],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah3[1],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+        if bouton_choix3.draw()== True:
+            ajoutemessageMurphy(messageNMurphy2[2],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah3[2],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+    elif avancementhistoire == 3 and messagerie==True and Noah==True:
+        affichereponses(messageNMurphy4,screen)
+        if bouton_choix1.draw()== True:
+            ajoutemessageMurphy(messageNMurphy4[0],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah5[0],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire=9
+
+        if bouton_choix2.draw()== True:
+            ajoutemessageMurphy(messageNMurphy4[1],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah5[1],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+        if bouton_choix3.draw()== True:
+            ajoutemessageMurphy(messageNMurphy4[2],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah5[2],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+    elif avancementhistoire == 5 and messagerie==True and Noah==True:
+        affichereponses(messageNMurphy6,screen)
+        if bouton_choix1.draw()== True:
+            ajoutemessageMurphy(messageNMurphy6[0],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah7[0],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire=9
+
+        if bouton_choix2.draw()== True:
+            ajoutemessageMurphy(messageNMurphy6[1],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah7[1],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire=9
+
+        if bouton_choix3.draw()== True:
+            ajoutemessageMurphy(messageNMurphy6[2],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah7[2],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+    elif avancementhistoire == 7 and messagerie==True and Noah==True:
+        affichereponses(messageNMurphy8,screen)
+        if bouton_choix1.draw()== True:
+            ajoutemessageMurphy(messageNMurphy8[0],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah9[0],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+        if bouton_choix2.draw()== True:
+            ajoutemessageMurphy(messageNMurphy8[1],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah9[1],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+        if bouton_choix3.draw()== True:
+            ajoutemessageMurphy(messageNMurphy8[2],conversationNoah,nomMessagerieMurphy)
+            derniermessageNoah = len(conversationNoah)-1
+            ajoutemessageAutre(messageNoah9[2],conversationNoah,nomMessagerieNoah)
+            derniermessageNoah = len(conversationNoah)-1
+            avancementhistoire+=2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     pygame.mouse.set_visible(False)
     x, y = pygame.mouse.get_pos()

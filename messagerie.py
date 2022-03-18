@@ -9,6 +9,13 @@ from conversationPolice import *
 
 avancementhistoire = 0
 
+Susan = False
+Noah = False
+Victoria = False
+Taylor = False
+Police = False
+DrDavies = False
+
 notificationSusan = False
 notificationNoah = False
 notificationVictoria = False
@@ -42,21 +49,38 @@ def nomcontacts():
 	if DrDavies == True:
 		screen.blit(nomDrDavies, (250,230))
 
-	screen.blit(nomMurphy, (250,452))
+	
 
+def notificationContact(screen,notificationcontact,notificationSusan,notificationNoah,notificationPolice,notificationVictoria,notificationTaylor,notificationDrDavies):
+	if notificationSusan == True:
+		screen.blit(notificationcontact,(430,133))
+	if notificationVictoria == True:
+		screen.blit(notificationcontact,(630,133))
+	if notificationNoah == True:
+		screen.blit(notificationcontact,(830,133))
+
+def ajoutemessageMurphy(xmessages,xconversation,nomMessagerieMurphy):
+	xconversation.append(nomMessagerieMurphy)
+	xconversation.append(xmessages)
 
 def ajoutemessageAutre(xmessages,xconversation,xnom):
-    pygame.time.delay(10000)
     xconversation.append(xnom)
     for i in xmessages:
     	xconversation.append(i)
     sonnotification.play()
     return xconversation
 
-if avancementhistoire = 0:
+def affichereponses(xmessages,screen):
+	screen.blit(xmessages[0],(410,370))
+	screen.blit(xmessages[1],(410,410))
+	screen.blit(xmessages[2],(410,450))
+
+'''if avancementhistoire == 0:
 	ajoutemessageAutre(messageNoah1,conversationNoah,nomNoah)
 	avancementhistoire+=1
+
 elif avancementhistoire = 2:
 	if derniermessageMurphyNoah = 1
 		ajoutemessageAutre(messageNoah1)
 
+'''

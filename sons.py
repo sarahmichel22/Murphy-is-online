@@ -9,3 +9,5 @@ sonclic = pygame.mixer.Sound('sons/clic.ogg')
 sonmenu = pygame.mixer.Sound('sons/menu.mp3')
 
 sonnotification = pygame.mixer.Sound('sons/notification.mp3')
+
+sonclavier = pygame.mixer.Sound('sons/clavier.mp3')
