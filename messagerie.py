@@ -58,6 +58,8 @@ def notificationContact(screen,notificationcontact,notificationSusan,notificatio
 		screen.blit(notificationcontact,(630,133))
 	if notificationNoah == True:
 		screen.blit(notificationcontact,(830,133))
+	if notificationPolice == True :
+		screen.blit(notificationcontact,(630,333))
 
 def ajoutemessageMurphy(xmessages,xconversation,nomMessagerieMurphy):
 	xconversation.append(nomMessagerieMurphy)

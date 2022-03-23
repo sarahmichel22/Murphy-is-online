@@ -30,7 +30,7 @@ messageNMurphy2 = [messageNMurphy2_1,messageNMurphy2_2,messageNMurphy2_3]
 
 
 Noah3_1_1 = police.render("Tant mieux! Ca fait plaisir à lire.",1,(100,100,100))
-Noah3_1_2 = police.render("Bon j'ai trop de choses à te raconter de mon côté!",1,(100,100,100))
+Noah3_1_2 = police.render("Bon j'ai plein de choses à te raconter!",1,(100,100,100))
 Noah3_2 = police.render("Haha, très drôle.",1,(100,100,100))
 Noah3_3_1 = police.render("C'est encore cette histoire avec ton enfant j'imagine...",1,(100,100,100))
 Noah3_3_2 = police.render("Je ne vais pas insisté ça risquerait de te faire de la peine.",1,(100,100,100))

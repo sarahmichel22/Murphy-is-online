@@ -109,3 +109,7 @@ photoPolice = pygame.image.load('pdp/pdpbase.png')
 
 retour = pygame.image.load('retour.png')
 
+imgbonnefin = pygame.image.load('bonnefin.png')
+imgfinhopital = pygame.image.load('finhopital.png')
+imgfinsuicide = pygame.image.load('finsuicide.png')
+
